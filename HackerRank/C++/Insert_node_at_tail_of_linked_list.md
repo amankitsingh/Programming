@@ -22,7 +22,7 @@ Print the elements of the linked list from head to tail, each in a new line.
 ---
 ## Code
 ---
-
+```
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -37,14 +37,15 @@ class SinglyLinkedListNode {
             this->next = nullptr;
         }
 };
-|
-|class SinglyLinkedList {
-|    public:
-|        SinglyLinkedListNode *head;
-|        SinglyLinkedList() {
-|            this->head = nullptr;
-|        }
-|
+
+class SinglyLinkedList {
+    public:
+        SinglyLinkedListNode *head;
+ 
+            SinglyLinkedList() {
+            this->head = nullptr;
+        }
+
 };
 
 void print_singly_linked_list(SinglyLinkedListNode* node, string sep, ofstream& fout) {
@@ -125,3 +126,4 @@ int main()
 
     return 0;
 }
+```
