@@ -1,3 +1,30 @@
+##Program to print Inverted Triangle in python
+
+```Output
+         *
+        **
+       ***
+      ****
+     *****
+    ******
+   *******
+  ********
+ *********
+**********
+ *********
+  ********
+   *******
+    ******
+     *****
+      ****
+       ***
+        **
+         *
+```
+
+
+```Python Code
+
 def pattern(n):
 
     for i in range(0,n):
@@ -14,3 +41,4 @@ def pattern(n):
         print()            
 
 pattern(10)
+```
