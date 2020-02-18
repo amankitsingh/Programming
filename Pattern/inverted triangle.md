@@ -1,4 +1,4 @@
-##Program to print Inverted Triangle in python
+## Program to print Inverted Triangle in python
 
 ```Output
          *
