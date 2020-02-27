@@ -1,6 +1,6 @@
-## Program to print pattern 'N' n times in a row;
+# Program to print pattern 'N' n times in a row;
 
-# Example 1:
+## Example 1:
 ```
 n=5
 c=3
@@ -13,7 +13,7 @@ c=3
 
 ```
 
-#Example 2:
+# Example 2:
 ```
 n=6
 c=2
