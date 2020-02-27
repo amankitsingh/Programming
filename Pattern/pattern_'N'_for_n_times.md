@@ -13,7 +13,7 @@ c=3
 
 ```
 
-# Example 2:
+## Example 2:
 ```
 n=6
 c=2
@@ -24,7 +24,8 @@ c=2
 +  + + +  + + 
 +   ++ +   ++
 +    + +    +
-
+```
+## Code:
 `
 #include<bits/stdc++.h>
 using namespace std;
