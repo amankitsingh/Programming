@@ -1,27 +1,28 @@
 ## Two Strings
-
-`
+---
+```
 Given two strings, determine if they share a common substring. A substring may be as small as one character.
 
 For example, the words "a", "and", "art" share the common substring . The words "be" and "cat" do not share a substring.
-
-`
+```
+---
 ### Sample Input:
-`
+```
 2
 hello
 world
 hi
 world
-`
+```
 ### Sample Output:
-`
+```
 YES
 NO
-`
+```
+---
 ### Code:
 
-`
+```
 #!/bin/python3
 
 import math
@@ -45,4 +46,4 @@ for q_itr in range(q):
   s1 = input()
   s2 = input()
 result = twoStrings(s1, s2)
-`
+```
