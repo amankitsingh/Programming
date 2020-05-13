@@ -28,6 +28,10 @@ Explanation: Remove all the digits from the number and it is left with nothing w
 
 # Code:
 
+Explanation:
+
+If previous digit > present digit pop it from the stack till k=0; if k is not 0 then pop all the back digit till k=0;
+
 ```C++
   string removeKdigits(string num, int k) {
         if(num.length()<=k) return "0";
