@@ -48,3 +48,23 @@ public:
     }e
 };
 ```
+### Python
+
+```
+class Solution:
+    def sortColors(self, n: List[int]) -> None:
+        start = 0
+        end = len(n)-1
+        j=end
+        while(start<=end):
+            if n[end] == 2:
+                n[end], n[j] = n[j], n[end]
+                j-=1
+                end-=1
+            elif n[end] == 0:
+                n[end],n[start] = n[start],n[end]
+                start+=1
+            else:
+                end-=1
+        
+```
