@@ -5,7 +5,7 @@
 ```
 Example 1:
 Input: 
-n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]]
+n = 3, edges = [[0,1,100],[1,2,100],[0,2,500]].
 src = 0, dst = 2, k = 1
 Output: 200
 Explanation: 
