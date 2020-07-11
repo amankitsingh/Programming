@@ -23,6 +23,27 @@ Output:
 
 ### Code:
 
+### C++:
+
+```
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        if(nums.empty()) return {{}};
+        vector<vector<int>> result = {{}};
+        for(auto x: nums){
+            int n = result.size();
+            for(int i=0;i<n;++i){
+                vector<int> temp = result[i];
+                temp.push_back(x);
+                result.push_back(temp);
+            }
+        }
+        return result;
+    }
+};
+```
+
 ### Python:
 
 ```
