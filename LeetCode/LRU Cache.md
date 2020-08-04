@@ -69,16 +69,7 @@ public:
             Node* t = it->second;
             if(t == this->front)
                 return t->val;
-            t->prev->next = t->next;
-            if(t != rear)
-                t->next->prev = t->prev;
-            else 
-                this->rear = t->prev;
-            t->next = this->front;
-            t->prev = nullptr;
-            this->front->prev = t;
-            this->front = t;
-            
+            move_to_front(t);
             return t->val;
         }
     }
@@ -100,17 +91,7 @@ public:
                 if(t == this->front){
                     return;
                 }
-                
-                t->prev->next = t->next;
-                
-                if(t != this->rear)
-                    t->next->prev = t->prev;
-                else
-                    this->rear = t->prev;
-                t->next = this->front;
-                t->prev = nullptr;
-                this->front->prev = t;
-                this->front = t;
+                move_to_front(t);
             }
             return;
         }
@@ -143,6 +124,18 @@ public:
                 mp[key] = temp;
             }
         }
+    }
+    
+    void move_to_front(Node* t){
+            t->prev->next = t->next;
+            if(t != this->rear)
+                t->next->prev = t->prev;
+            else 
+                this->rear = t->prev;
+            t->next = this->front;
+            t->prev = nullptr;
+            this->front->prev = t;
+            this->front = t;
     }
 };
 
