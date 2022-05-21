@@ -31,3 +31,7 @@
 	<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
 </ul>
 </div>
+
+
+#### Time Complexity: O(n)
+#### Space Complexity: O(n)
