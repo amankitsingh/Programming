@@ -9,11 +9,10 @@ class Solution:
         if head is None: return False
         if head.next is None: return False
         
-        visited= []
         while head.next is not None:
-            if head in visited:
+            if head.val is False:
                 return True
             else:
-                visited.append(head)
+                head.val = False
                 head = head.next
         return False
