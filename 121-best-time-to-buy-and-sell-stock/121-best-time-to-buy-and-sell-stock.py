@@ -5,8 +5,8 @@ class Solution:
         for x in prices:
             if x < smallest:
                 smallest = x
-            elif x > smallest:
-                profit = max(profit, x-smallest)
+            if profit < (x - smallest):
+                profit = x - smallest
                     
             
         return profit
