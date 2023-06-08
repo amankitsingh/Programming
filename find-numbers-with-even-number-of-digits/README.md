@@ -30,3 +30,18 @@ Only 1771 contains an even number of digits.
 	<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 </div>
+
+<pre>Answere</pre>
+<code>
+	class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        result = 0
+        for x in nums:
+            iteration = 0
+            while x>0:
+                iteration+=1
+                x = int(x/10)
+            if iteration % 2 == 0:
+                result+=1
+        return result
+</code>
