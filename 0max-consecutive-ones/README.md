@@ -22,3 +22,17 @@
 	<li><code>nums[i]</code> is either <code>0</code> or <code>1</code>.</li>
 </ul>
 </div>
+
+<pre>Answere</pre>
+<code>
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        n,maximum_consecutive = 0,0
+        for x in nums:
+            if x==1:
+                n+=1
+            else:
+                maximum_consecutive = max(maximum_consecutive,n)
+                n=0
+        return max(maximum_consecutive,n)
+	</code>
