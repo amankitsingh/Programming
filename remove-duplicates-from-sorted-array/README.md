@@ -50,3 +50,26 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 	<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
 </ul>
 </div>
+
+Answer
+
+<code>
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        i,j,iteration = 1,0,0
+        if len(nums) <= 1:
+            return len(nums)
+        n = len(nums)
+        
+        while iteration<n:
+            if i > len(nums)-1:
+                break
+            if nums[i] == nums[j]:
+                del nums[i]
+            else:
+                j+=1
+                i+=1
+            iteration+=1
+        return j+1
+        
+</code>
