@@ -1,14 +1,11 @@
 class Solution:
     def checkIfExist(self, arr: List[int]) -> bool:
-        i,j=0,0
-        while i < len(arr):
-            while j < len(arr):
-                if i!=j:
-                    if arr[i] == 2*arr[j]:
-                        return True
-                j+=1
-            j=0
-            i+=1
-                
-                
+        seen = set()
+        for x in range(len(arr)):
+            if 2*arr[x] in seen:
+                return True
+            elif arr[x]%2 == 0 and arr[x]/2 in seen:
+                return True
+            else:
+                seen.add(arr[x])
         return False
