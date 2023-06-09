@@ -73,3 +73,8 @@ class Solution:
         return j+1
         
 </code>
+
+<code>
+	nums[:] = sorted(set(nums))
+        return(len(nums))
+</code>
