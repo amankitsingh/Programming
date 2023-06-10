@@ -53,7 +53,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 Answer
 
-<code>
+```
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         i,j,iteration = 1,0,0
@@ -72,9 +72,9 @@ class Solution:
             iteration+=1
         return j+1
         
-</code>
+```
 
-<code>
+```
 	nums[:] = sorted(set(nums))
         return(len(nums))
-</code>
+```
