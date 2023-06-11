@@ -41,3 +41,51 @@ The third distinct maximum is 1.
 
 <p>&nbsp;</p>
 <strong>Follow up:</strong> Can you find an <code>O(n)</code> solution?</div>
+
+
+Answer 1
+```
+from sortedcontainers import SortedSet
+
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        max_array = SortedSet()
+        for x in nums:
+            if x in max_array:
+                continue
+            if len(max_array) == 3:
+                max_array.add(x)
+                max_array.discard(max_array[0])
+            else:
+                max_array.add(x)
+        
+        if len(max_array) == 3:
+            return max_array[0]
+        else:
+            return max_array[-1]
+```            
+Answer 2
+
+```
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        firmax = -inf
+        secmax = -inf
+        thrmax = -inf
+        
+        for x in nums:
+            if x == firmax or x == secmax or x == thrmax:
+                continue
+                
+            if x > firmax:
+                thrmax,secmax = secmax,thrmax
+                secmax,firmax = firmax,x
+            elif x > secmax:
+                thrmax,secmax = secmax,x
+            elif x > thrmax:
+                thrmax = x
+        
+        if thrmax == -inf:
+            return firmax
+        return thrmax
+```
