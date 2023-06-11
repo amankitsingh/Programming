@@ -27,12 +27,12 @@ After sorting, it becomes [0,1,9,16,100].
 <p>&nbsp;</p>
 <strong>Follow up:</strong> Squaring each element and sorting the new array is very trivial, could you find an <code>O(n)</code> solution using a different approach?</div>
 
-<code>
-	class Solution:
+```
+class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
         result = []
         for i in range(len(nums)):
             nums[i] = pow(nums[i],2)
             
         return sorted(nums)
-</code>
+```
