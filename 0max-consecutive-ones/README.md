@@ -23,8 +23,9 @@
 </ul>
 </div>
 
-<pre>Answere</pre>
-<code>
+<p><strong class="example">Answer</strong></p>
+
+```
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
         n,maximum_consecutive = 0,0
@@ -35,4 +36,4 @@ class Solution:
                 maximum_consecutive = max(maximum_consecutive,n)
                 n=0
         return max(maximum_consecutive,n)
-	</code>
+```
