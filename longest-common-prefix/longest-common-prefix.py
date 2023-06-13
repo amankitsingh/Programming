@@ -1,3 +1,4 @@
+#Answer - 1 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         if len(strs) == 1: return strs[0]
@@ -14,3 +15,19 @@ class Solution:
             searchstr=temp_searchstr
         
         return searchstr if searchstr else ""
+    
+#Answer - 2 
+class Solution:
+    def longestCommonPrefix(self, strs: list[str]) -> str:
+        m = min(strs)
+        M = max(strs)
+
+        res = ""
+
+        for i in range(len(m)):
+            if m[i] == M[i]:
+                res += m[i]
+            else:
+                break
+        
+        return res
