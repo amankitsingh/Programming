@@ -2,7 +2,7 @@ class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
         i = 0
         result = []
-        nums = sorted(nums)
+        nums.sort()
         
         while i < len(nums):
             result.append([nums[i],nums[i+1]])
