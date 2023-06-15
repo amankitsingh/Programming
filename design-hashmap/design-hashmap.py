@@ -9,8 +9,7 @@ class MyHashMap:
     def get(self, key: int) -> int:
         if key in self.hashmap:
             return self.hashmap[key] 
-        else:
-            return -1
+        return -1
 
     def remove(self, key: int) -> None:
         if key in self.hashmap:
