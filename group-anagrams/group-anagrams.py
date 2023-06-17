@@ -9,4 +9,4 @@ class Solution:
             else:
                 hashmap[temp] = [x]
         
-        return list(hashmap.values())
+        return hashmap.values()
