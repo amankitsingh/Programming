@@ -11,4 +11,8 @@ class Solution:
             for n4 in nums4:
                 result += dic[n3+n4]
         return result
-        
+
+#Answer 2
+def fourSumCount(self, A, B, C, D):
+    AB = collections.Counter(a+b for a in A for b in B)
+    return sum(AB[-c-d] for c in C for d in D)
