@@ -10,7 +10,6 @@ class Solution:
             return 0
         
         directions = [(1,0),(-1,0),(0,1),(0,-1)]
-        queue = collections.deque([])
         result = 0
         for i in range(len(grid)):
             for j in range(len(grid[0])):
