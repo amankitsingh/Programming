@@ -8,11 +8,26 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        memo = {}
-        def clone(node):
-            if node not in memo:
-                temp_node = memo[node] = Node(node.val, [])
-                temp_node.neighbors = list(map(clone, node.neighbors))
-            return memo[node]
-        return node and clone(node)
+        #O(branch^depth), O(n + depth)
+
+        #hashmap to record visited graph {root node: graph}
+        old_to_new = {}
+
+        def dfs(node):
+            #return graph from haspmap is visited
+            if node in old_to_new: 
+                return old_to_new[node]
+
+            #create new node
+            new_list = Node(node.val)
+
+            #add to haspmap
+            old_to_new[node] = new_list
+
+            #dfs for each neighbor
+            for n in node.neighbors:
+                new_list.neighbors.append(dfs(n))
+            
+            return new_list
+        return dfs(node) if node else None
             
