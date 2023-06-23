@@ -7,6 +7,6 @@ class Solution:
             if j >=0: sump += ord(b[j]) - ord('0')
             i,j = i-1,j-1
             result += str(sump%2)
-            carry = 1 if sump > 1 else 0
+            carry = 1 if sump > 1 else 0 #is sump is more than 1 then take 1 
         if carry: result+=str(carry)
         return result[::-1]
