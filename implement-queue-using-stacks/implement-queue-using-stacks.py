@@ -1,0 +1,26 @@
+class MyQueue:
+
+    def __init__(self):
+        self.deque = collections.deque()
+
+    def push(self, x: int) -> None:
+        self.deque.append(x)
+
+    def pop(self) -> int:
+        return self.deque.popleft()
+
+    def peek(self) -> int:
+        return self.deque[0]
+
+    def empty(self) -> bool:
+        if len(self.deque) == 0:
+            return True 
+        return False
+
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
