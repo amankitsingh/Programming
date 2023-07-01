@@ -8,6 +8,7 @@ class Solution:
         badversion = 0
         while first<last:
             mid = first+(last-first)//2 # Solution for most famous overflow bug, if used (first+last)/2
+            # or this can be usedmid = (first + last) >> 1;
             if first==mid or last==mid:
                 break
             if isBadVersion(mid):
