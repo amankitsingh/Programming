@@ -1,3 +1,4 @@
+# Answer 1 - brute force
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         if len(nums)<=3:
@@ -13,3 +14,16 @@ class Solution:
                     return i
                
         return len(nums)-1 if nums[-1] > nums[-2] else 0 
+
+# Answer 2 - Binary search
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        lo = 0
+        hi = len(nums)-1
+        while lo < hi:
+            mid = lo + (hi - lo)//2
+            if nums[mid] > nums[mid+1]:
+                hi = mid
+            else:
+                lo = mid+1
+        return lo
