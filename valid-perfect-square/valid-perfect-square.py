@@ -1,3 +1,12 @@
+# Answer 1 - Newton method
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        r = num
+        while r*r > num:
+            r = (r + num/r)//2
+        return r*r == num
+        
+# Answer 2 - Binary Search        
 class Solution:
     def isPerfectSquare(self, num):
         l, h = 1, int(num/2)
