@@ -1,104 +1,87 @@
-class Node(object):
-
-    def __init__(self, val):
+class Node:
+    def __init__(self, val, next_address = None):
         self.val = val
-        self.next = None
-
-
-class MyLinkedList(object):
+        self.next = next_address
+        
+class MyLinkedList:
 
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         self.head = None
         self.size = 0
 
-    def get(self, index):
-        """
-        Get the value of the index-th node in the linked list. If the index is invalid, return -1.
-        :type index: int
-        :rtype: int
-        """
-        if index < 0 or index >= self.size:
+    def get(self, index: int) -> int:
+        if index < 0  or index > self.size:
             return -1
-
         if self.head is None:
             return -1
-
-        curr = self.head
-        for i in range(index):
-            curr = curr.next
-        return curr.val
-
-    def addAtHead(self, val):
-        """
-        Add a node of value val before the first element of the linked list.
-        After the insertion, the new node will be the first node of the linked list.
-        :type val: int
-        :rtype: void
-        """
-        node = Node(val)
-        node.next = self.head
-        self.head = node
-
-        self.size += 1
-
-    def addAtTail(self, val):
-        """
-        Append a node of value val to the last element of the linked list.
-        :type val: int
-        :rtype: void
-        """
-        curr = self.head
-        if curr is None:
-            self.head = Node(val)
         else:
-            while curr.next is not None:
-                curr = curr.next
-            curr.next = Node(val)
+            count = 0
+            temp = self.head
+            while temp.next and count != index:
+                temp = temp.next
+                count+=1
+            if temp.next == None and count!= index:
+                return -1
+            return temp.val
+                
 
-        self.size += 1
+    def addAtHead(self, val: int) -> None:
+        self.head = Node(val, self.head)
+        self.size+=1
 
-    def addAtIndex(self, index, val):
-        """
-        Add a node of value val before the index-th node in the linked list.
-        If index equals to the length of linked list, the node will be appended to the end of linked list.
-        If index is greater than the length, the node will not be inserted.
-        :type index: int
-        :type val: int
-        :rtype: void
-        """
-        if index < 0 or index > self.size:
-            return
 
+    def addAtTail(self, val: int) -> None:
+        if self.head is not None:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = Node(val)
+            self.size+=1
+        else:
+            self.addAtHead(val)
+
+
+    def addAtIndex(self, index: int, val: int) -> None:
         if index == 0:
             self.addAtHead(val)
-        else:
-            curr = self.head
-            for i in range(index - 1):
-                curr = curr.next
-            node = Node(val)
-            node.next = curr.next
-            curr.next = node
-
-            self.size += 1
-
-    def deleteAtIndex(self, index):
-        """
-        Delete the index-th node in the linked list, if the index is valid.
-        :type index: int
-        :rtype: void
-        """
-        if index < 0 or index >= self.size:
             return
-
-        curr = self.head
-        if index == 0:
-            self.head = curr.next
+        elif index == self.size:
+            self.addAtTail(val)
+            return
+        elif index > self.size:
+            return
         else:
-            for i in range(index - 1):
-                curr = curr.next
-            curr.next = curr.next.next
+            index-=1
+            count=0
+            temp = self.head
+            while temp.next is not None and count != index:
+                temp = temp.next
+                count+=1
+            temp.next = Node(val,temp.next)
+            self.size+=1
 
-        self.size -= 1
+    def deleteAtIndex(self, index: int) -> None:
+        if index == 0:
+            if self.head is not None:
+                self.head = self.head.next
+            else:
+                return
+        elif index < 0 or index >= self.size:
+            return
+        else:
+            index-=1
+            count = 0
+            temp = self.head
+            while temp.next is not None and count != index:
+                temp = temp.next
+                count+=1
+            temp.next = temp.next.next
+        self.size-=1
+    
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.val,"->",end="")
+            temp = temp.next
+        print()
+        
