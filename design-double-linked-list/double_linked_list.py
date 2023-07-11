@@ -92,7 +92,7 @@ dll = DoublyLinkedList()
 dll.addHead(2)
 dll.addTail(4)
 dll.addAtIndex(1, 3)
-dll.display()  # Output: 2 3 4
+dll.display()  # Output: 2->3->4
 print(dll.get(2))  # Output: 4
 dll.deleteAtIndex(1)
-dll.display()  # Out
+dll.display()  # Output: 2->4
