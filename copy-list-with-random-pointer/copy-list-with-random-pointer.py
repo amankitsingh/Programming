@@ -7,6 +7,32 @@ class Node:
         self.random = random
 """
 
+# Answer 1 - Time complexity O(n), Space complexity O(n)
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if head is None:
+            return
+        temp = head
+
+        while temp:
+            temp.next = Node(temp.val,temp.next)
+            temp = temp.next.next
+        
+        temp = head
+        temp1 = head.next
+        while temp:
+            if temp.random:
+                temp1.random = temp.random.next
+            if temp1.next:
+                temp = temp1.next
+                temp1.next = temp.next
+                temp1 = temp1.next
+            else:
+                temp = temp1.next
+        
+        return head.next
+            
+#Answer 2 - Time complexity O(n), Space complexity O(n+m) 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         d = {None : None}
