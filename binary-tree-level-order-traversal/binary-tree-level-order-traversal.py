@@ -13,16 +13,15 @@ class Solution:
         stack.append([root])
         while stack:
             curr_node = stack.popleft()
-            temp = []
+            temp,result = [],[]
             for i in curr_node:
                 if i.left:
                     temp.append(i.left)
                 if i.right:
                     temp.append(i.right)
+                result.append(i.val)
             if temp:
                 stack.append(temp)
-            temp = []
-            for i in curr_node:
-                temp.append(i.val)
-            answer.append(temp)
+            if result:
+                answer.append(result)
         return answer
