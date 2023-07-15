@@ -27,3 +27,20 @@ class Solution:
             if result:
                 answer.append(result)
         return answer
+
+# Answer 2
+class Solution:
+    def levelOrder(self, root: TreeNode | None) -> list[float]:
+        numbers = []
+        queue = [(root, 0)]
+        while queue:
+            node, depth = queue.pop(0)
+            if node is None:
+                continue
+            if depth < len(numbers):
+                numbers[depth].append(node.val)
+            else:
+                numbers.append([node.val])
+            queue.append((node.left, depth + 1))
+            queue.append((node.right, depth + 1))
+        return numbers
