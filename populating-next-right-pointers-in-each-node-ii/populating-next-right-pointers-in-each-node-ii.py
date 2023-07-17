@@ -8,6 +8,29 @@ class Node:
         self.next = next
 """
 
+# Answer 1 - Time complexity O(n) and Space Complexity O(n)
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        def add_neighbour(te, lev):
+            if te.left:
+                queue.append([te.left, lev+1])
+            if te.right:
+                queue.append([te.right, lev+1])
+        queue = deque()
+        if root is None:
+            return
+        queue.append((root,0))
+        while queue:
+            temp,level = queue.popleft()
+            add_neighbour(temp,level)
+            while len(queue) > 0 and queue[0][1] == level:
+                temp2,level2 = queue.popleft()
+                add_neighbour(temp2,level2)
+                temp.next = temp2
+                temp = temp2
+        return root
+
+# Answer 2 - Time Complexity O(n) and Space Complexity O(1)
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if root and root.left and root.right:
@@ -39,5 +62,4 @@ class Solution:
         if root:
             self.connect(root.right)
             self.connect(root.left)
-            
         return root
