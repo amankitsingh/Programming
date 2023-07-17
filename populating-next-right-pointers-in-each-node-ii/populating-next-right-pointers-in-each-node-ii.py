@@ -62,4 +62,25 @@ class Solution:
         if root:
             self.connect(root.right)
             self.connect(root.left)
-        return root
+        return rootclass Solution:
+
+# Answer 3 - Time Complexity O(n) and Space Complexity O(1)
+def connect(self, root: 'Node') -> 'Node':
+    if root is None:
+        return
+    scanner = root.next
+    while scanner:
+        if scanner.left:
+            scanner = scanner.left
+            break
+        elif scanner.right:
+            scanner = scanner.right
+            break
+        scanner = scanner.next
+    if root.right:
+        root.right.next = scanner
+    if root.left:
+        root.left.next = root.right if root.right else scanner
+    self.connect(root.right)
+    self.connect(root.left)
+    return root
