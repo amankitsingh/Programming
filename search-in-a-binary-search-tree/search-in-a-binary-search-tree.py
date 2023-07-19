@@ -4,6 +4,23 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# Answer 1
+class Solution:
+    def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
+        if root and root.val == val:
+            return root
+        else:
+            if root:
+                temp1 = self.searchBST(root.left,val)
+                temp2 = self.searchBST(root.right,val)
+                return temp1 if temp1 and temp1.val == val else temp2
+            else:
+                return None
+        
+        return self.searchBST(root,val) 
+
+# Answer 2
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         if root is None:
