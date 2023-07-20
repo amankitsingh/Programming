@@ -1,3 +1,11 @@
+# Answer 1 - slow
+class Solution:
+    def fib(self, n: int) -> int:
+        if n<2:
+            return n
+        return self.fib(n-1)+self.fib(n-2)
+
+# Answer 2 - fast
 class Solution:
     def fib(self, n: int) -> int:
         cache = {}
