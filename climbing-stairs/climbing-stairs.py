@@ -1,3 +1,4 @@
+# Recursive
 class Solution:
     def climbStairs(self, n: int) -> int:
         cache = {}
@@ -11,7 +12,19 @@ class Solution:
             cache[N] = result
             return result
         return helper(n)
-        
+
+# Recursive
+class Solution:
+    memo = {}
+    def climbStairs(self, n: int) -> int:
+        if n <= 3:
+            return n
+        if n in self.memo:
+            return self.memo[n]
+        self.memo[n] = self.climbStairs(n-1)+self.climbStairs(n-2)
+        return self.memo[n]
+
+# Iterative
 class Solution:
     def climbStairs(self, n: int) -> int:
         memo = {1:1,2:2}
