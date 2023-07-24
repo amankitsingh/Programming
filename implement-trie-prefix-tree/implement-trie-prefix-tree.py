@@ -5,8 +5,7 @@ class Trie:
         self.word = False
 
     def insert(self, word: str) -> None:
-        temp = self
-        head = temp
+        head = self
         for s in word:
             if s not in head.children:
                 head.children[s] = Trie()
@@ -14,8 +13,7 @@ class Trie:
         head.word = True
             
     def search(self, word: str) -> bool:
-        temp = self
-        head=temp
+        head = self
         for s in word:
             if s not in head.children:
                 return False
@@ -23,8 +21,7 @@ class Trie:
         return head.word
     
     def startsWith(self, prefix: str) -> bool:
-        temp = self
-        head= temp
+        head = self
         for s in prefix:
             if s not in head.children:
                 return False
