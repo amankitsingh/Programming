@@ -1,22 +1,27 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        result,i,j = [],0,0
-        while i < len(nums1) and j < len(nums2):
-            if nums1[i] < nums2[j]:
-                result.append(nums1[i])
-                i+=1
+        A, B = nums1, nums2
+        total_len = len(nums1)+len(nums2)
+        half_len = total_len//2
+
+        if len(B) < len(A):
+            A,B = B,A
+        
+        l,r = 0, len(A) - 1
+        while True:
+            i = l+(r-l)//2
+            j = half_len - i - 2
+
+            Aleft = A[i] if i>=0 else float("-inf")
+            Aright = A[i+1] if (i + 1) < len(A) else float("inf")
+            Bleft = B[j] if j>=0 else float("-inf")
+            Bright = B[j+1] if (j+1) < len(B) else float("inf")
+
+            if Aleft <= Bright and Bleft <= Aright:
+                if total_len%2:
+                    return min(Aright, Bright)
+                return (max(Aleft, Bleft) + min(Aright,Bright) )/2
+            elif Aleft > Bright:
+                r = i - 1
             else:
-                result.append(nums2[j])
-                j+=1
-        while i < len(nums1):
-            result.append(nums1[i])
-            i+=1
-        while j < len(nums2):
-            result.append(nums2[j])
-            j+=1
-        mid = len(result)//2
-        print(result,mid)
-        if len(result)%2 == 0:
-            return (result[mid-1]+result[mid])/2
-        else:
-            return float(result[mid])
+                l = i + 1 
