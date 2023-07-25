@@ -1,3 +1,21 @@
+# Answer 1 - Using dic - problem is memory
+class MapSum:
+
+    def __init__(self):
+        self.dic = {}
+
+    def insert(self, key: str, val: int) -> None:
+        self.dic[key] = val
+
+    def sum(self, prefix: str) -> int:
+        total = 0
+        for k,v in self.dic.items():
+            length = len(prefix)
+            if prefix == k[:length]:
+                total+=v
+        return total
+        
+# Answer 2 - Using Trie, optimal solution
 class MapSum:
 
     def __init__(self):
@@ -30,7 +48,6 @@ class MapSum:
             for c in temp.children:
                 queue.append(temp.children[c])
         return total
-
 
 # Your MapSum object will be instantiated and called as such:
 # obj = MapSum()
