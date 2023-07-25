@@ -1,3 +1,4 @@
+# Answer 1 - using prefix trie - Time Complexity O(n), Space Complexity O(dictionary+sentence)
 class Solution:
     def __init__(self):
         self.children = {}
@@ -33,4 +34,15 @@ class Solution:
             else:
                 answer_sentence.append(word)
         return " ".join(answer_sentence)
-                        
+
+# Answer 2 - using prefix hash -  Time Complexity O(n), Space Complexity O(roots+sentence)
+def replaceWords(self, roots, sentence):
+    rootset = set(roots)
+
+    def replace(word):
+        for i in xrange(1, len(word)):
+            if word[:i] in rootset:
+                return word[:i]
+        return word
+
+    return " ".join(map(replace, sentence.split()))
