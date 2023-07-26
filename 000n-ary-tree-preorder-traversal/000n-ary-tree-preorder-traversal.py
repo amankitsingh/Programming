@@ -8,12 +8,12 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        def children(root):
+        def preorder(root):
             if not root:
                 return
             result.append(root.val)
             for child in root.children:
-                children(child)
+                preorder(child)
         result = []
         children(root)
         return result
