@@ -7,36 +7,22 @@
 class Solution:
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         if not root:
-            return None
-            
-        if root.val > key:
-		    # Target node is smaller than currnet node, search left subtree
-			
-            root.left = self.deleteNode( root.left, key )
-
-        elif root.val < key:
-		    # Target node is larger than currnet node, search right subtree
-			
-            root.right = self.deleteNode( root.right, key )
-
-        else:
-            # Current node is target node
-			
-            if (not root.left) or (not root.right):
-                # At least one child is empty
-                # Target node is replaced by either non-empty child or None
-                root = root.left if root.left else root.right
-
+            return root
+        if root.val == key:
+            if root.left and root.right:
+                curr = root.right
+                while curr.left:
+                    curr = curr.left
+                root.val = curr.val
+                root.right = self.deleteNode(root.right, curr.val)
+            elif root.left and not root.right:
+                return root.left
+            elif root.right and not root.left:
+                return root.right
             else:
-                # Both two childs exist
-                # Target node is replaced by smallest element of right subtree
-                cur = root.right
-
-                while cur.left:
-                    cur = cur.left
-
-                root.val = cur.val
-                root.right = self.deleteNode( root.right, cur.val )
-                    
+                return None
+        if root.val > key:
+            root.left = self.deleteNode(root.left, key)
+        else:
+            root.right = self.deleteNode(root.right, key)
         return root
-
