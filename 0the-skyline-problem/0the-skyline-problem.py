@@ -1,3 +1,4 @@
+# Answer 1 - Time complexity - O(nlogn), Space complexity - O(heap_heights+node_list)=O(h+m)
 from heapq import heappop, heappush, heapify
 class Solution:
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
@@ -13,7 +14,7 @@ class Solution:
         for x,height in node_list:
             if height < 0:
                 max_heap.append(-1*height)
-                max_heap.sort()
+                max_heap.sort() # this is the problem
             else:
                 max_heap.remove(height)
             max_height = max_heap[-1]
