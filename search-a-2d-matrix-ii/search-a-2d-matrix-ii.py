@@ -27,7 +27,8 @@ class Solution:
                 else:
                     lo = mid+1
         return False
-# Answer 1 - Time complexity O(m+n)
+        
+# Answer 3 - Time complexity O(m+n)
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         for i in range(len(matrix)):
