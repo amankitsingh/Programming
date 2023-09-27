@@ -1,4 +1,4 @@
-# Finding the subsequnce of given number
+# Finding the subsequence of a given number
 class Solution:
     def subsequence(self, nums):
         def findF(index, ds, arr, n):
