@@ -69,3 +69,13 @@ def ninjaTraining(n: int, points: List[List[int]]) -> int:
                     temp[last] = max(temp[last], activity)
         prev = temp
     return prev[3]
+
+### Answer 4
+def ninjaTraining(n,points) -> int:
+    a,b,c=points[0]
+    for i in range(1,n):
+       new_a=max(b,c)+points[i][0]
+       new_b=max(a,c)+points[i][1]
+       new_c=max(a,b)+points[i][2]
+       a,b,c=new_a,new_b,new_c
+    return max(a,b,c)
