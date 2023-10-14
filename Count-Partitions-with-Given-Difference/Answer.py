@@ -24,6 +24,13 @@ def countPartitions(n: int, d: int, arr: List[int]) -> int:
     dp = [[-1 for i in range(tar+1)] for j in range(n)]
     def find_subsets(index, target):
         if index == 0:
+            """
+            when index is 0 and array has 0 in the index and target is also zero we will consider 2
+            [0,1]
+            if target is 0 or target is equal to 0 index element then we will consider 1
+            else 
+            0
+            """
             if target == 0 and arr[0]==0:
                 return 2
             if target == 0 or target == arr[0]:
