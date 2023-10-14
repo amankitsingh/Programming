@@ -4,8 +4,13 @@ def findWays(arr: List[int], k: int) -> int:
     dp =[[-1]*(k+1) for j in range(len(arr))]
 
     def find_subs(index, target):
-        if index < 0:
-            return 0 if target!=0 else 1
+        if ind == 0:
+            if target == 0 and arr[0] == 0:
+                return 2
+            if target == 0 or target == arr[0]:
+                return 1
+            return 0
+            
         if dp[index][target]!=-1:
             return dp[index][target]
 
