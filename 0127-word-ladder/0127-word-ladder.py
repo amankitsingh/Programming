@@ -1,3 +1,6 @@
+### Answer 1
+### Time complexity - O(N*M*26), Space Complexity - O(N)
+### - N is word list, M is Word length, 26 is alphabets
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         wordList = set(wordList)
