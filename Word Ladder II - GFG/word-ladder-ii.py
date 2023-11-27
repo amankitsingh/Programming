@@ -23,10 +23,9 @@ class Solution:
                         wordList.remove(_)
             
             if vec[-1] == endWord:
-                if len(result) == 0:
+                if len(result) == 0 or len(result[0]) == len(vec):
                     result.append(vec)
-                elif len(result[0]) == len(vec):
-                    result.append(vec)
+                    continue
                     
             for i in range(len(vec[-1])):
                 temp = list(vec[-1])
