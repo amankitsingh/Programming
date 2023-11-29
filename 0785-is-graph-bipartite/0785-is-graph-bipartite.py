@@ -4,11 +4,6 @@ class Solution:
         visited = [-1]*n
         nodes_colored = [-1]*n
 
-        queue = deque()
-        queue.append([0,0])
-        result = [False]*n
-
-
         def dfs(node, color):
             nodes_colored[node] = color
             new_color = 1 if color == 0 else 0
