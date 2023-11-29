@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(V*2E), Space complexity - O(2V)~O(V)
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
         n = len(graph)
