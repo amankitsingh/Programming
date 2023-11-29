@@ -1,7 +1,6 @@
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
         n = len(graph)
-        visited = [-1]*n
         nodes_colored = [-1]*n
 
         def dfs(node, color):
