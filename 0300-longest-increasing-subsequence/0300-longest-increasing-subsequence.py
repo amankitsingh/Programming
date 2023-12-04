@@ -39,7 +39,7 @@ class Solution:
         return dp[0][0]
 
 ### Answer 3
-### Time complexity - O(NlogN), Space complexity-  o(N)
+### Time complexity - O(NlogN), Space complexity-  O(N)
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         n = len(nums)
