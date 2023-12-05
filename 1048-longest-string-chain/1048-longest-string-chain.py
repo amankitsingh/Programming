@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(N*N*L+NlogN), space complexity - O(N)
 class Solution:
     def longestStrChain(self, words: List[str]) -> int:
         n = len(words)
@@ -29,6 +31,4 @@ class Solution:
 
                 if dp[i] > maxi:
                     maxi = dp[i]
-
-
         return maxi
