@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(N*N+N), Space complexity - O(2N)~O(N)
 class Solution:
     def findNumberOfLIS(self, arr: List[int]) -> int:
         n = len(arr)
