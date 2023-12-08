@@ -1,3 +1,4 @@
+### Time complexity - O(N*4), Space complexity - O(N)
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         def search_neigh(image,sr,sc,first):
