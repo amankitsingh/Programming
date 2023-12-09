@@ -19,7 +19,7 @@ def mcm(arr,N):
     return recr(i,j)
 
 ### Answer 2 - tabulation approach
-### Time complexity - O(N*N*N), Space complexity - O(N*N+N)
+### Time complexity - O(N*N*N), Space complexity - O(N*N)
 def mcm(p,n):
     n=n+1
     dp = [[-1]*(n) for i in range(n)]
