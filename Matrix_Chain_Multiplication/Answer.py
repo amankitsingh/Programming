@@ -1,3 +1,4 @@
+### Answer 1 - Memoization approach
 ### Time complexity - O(N*N*N), Space complexity - O(N*N+N)
 def mcm(arr,N):
     i=1
@@ -16,3 +17,21 @@ def mcm(arr,N):
         dp[i][j] = mini
         return dp[i][j]
     return recr(i,j)
+
+### Answer 2 - tabulation approach
+### Time complexity - O(N*N*N), Space complexity - O(N*N+N)
+def mcm(p,n):
+    n=n+1
+    dp = [[-1]*(n) for i in range(n)]
+    for i in range(n):
+        dp[i][i] = 0
+    for i in range(n-1,0,-1):
+        for j in range(i+1,n):
+            mini = float("inf")
+            for k in range(i,j):
+                res = dp[i][k] + dp[k+1][j] + p[i-1]*p[k]*p[j]
+                mini = min(mini, res)
+            dp[i][j]=mini
+    
+    return dp[1][n-1]
+
