@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(M*M*M), Space complexity - O(M*M)
 class Solution:
     def minCost(self, n: int, cuts: List[int]) -> int:
         cuts = [0] + sorted(cuts) +[n]
