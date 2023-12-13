@@ -1,5 +1,5 @@
 ### Answer 1 - Recursion + Memoization
-### Time complexity - O(N*N*N), Space complexity - O(N*N) + O(N)
+### Time complexity - O(N*N), Space complexity - O(N) + O(N)
 class Solution:
     def minCut(self, string: str) -> int:
         if string ==  string[::-1]:
@@ -24,7 +24,7 @@ class Solution:
         return palipart(0)-1
         
 ### Answer 2 - Bottom-up approach
-### Time complexity - O(N*N), Space complexity - O(N*N)
+### Time complexity - O(N*N), Space complexity - O(N)
 class Solution:
     def minCut(self, string: str) -> int:
         if string ==  string[::-1]:
