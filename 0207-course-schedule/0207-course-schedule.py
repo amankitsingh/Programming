@@ -1,3 +1,5 @@
+### Answer 1 - DFS
+### Time complexity - O(N*N), Space complexity - O(N)+O(N)+O(N)
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         adj = defaultdict(list)
