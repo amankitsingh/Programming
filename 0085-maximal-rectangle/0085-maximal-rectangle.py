@@ -1,6 +1,6 @@
 class Solution:
     def maximalRectangle(self, matrix: List[List[str]]) -> int:
-        def largesthistogram(arr):
+        def largesthistogram(arr,size):
             stack = []
             result = 0
             for i,val in enumerate(arr):
@@ -12,7 +12,7 @@ class Solution:
                 stack.append((start, val))
             
             for i,v in stack:
-                result = max(result, v*(len(arr)-i))
+                result = max(result, v*(size-i))
             
             return result
         
@@ -26,7 +26,7 @@ class Solution:
                     height[j]+=1
                 else:
                     height[j] = 0
-            maxi = max(maxi, largesthistogram(height))
+            maxi = max(maxi, largesthistogram(height,m))
         
         return maxi
             
