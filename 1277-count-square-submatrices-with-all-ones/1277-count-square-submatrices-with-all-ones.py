@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(3*N*M + N + M)~O(N*M), Space complexity -  O(N*M)
 class Solution:
     def countSquares(self, arr: List[List[int]]) -> int:
         n = len(arr)
