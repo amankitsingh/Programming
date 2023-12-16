@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(N*M*4)~O(N*M), Space complexity - O(1)
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
         n = len(grid)
