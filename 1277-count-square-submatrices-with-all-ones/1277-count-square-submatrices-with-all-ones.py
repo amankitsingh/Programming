@@ -1,5 +1,6 @@
 ### Answer 1
 ### Time complexity - O(N*M + 3*N + M)~O(N*M), Space complexity -  O(N*M)
+### Intuition is to check the right end of the square (dp[i-1][j],dp[i][j-1],dp[i-1][j-1])
 class Solution:
     def countSquares(self, arr: List[List[int]]) -> int:
         n = len(arr)
