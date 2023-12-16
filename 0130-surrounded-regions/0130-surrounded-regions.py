@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(N*M*4+N*M)~O(N*M), Space complexity - O(1)
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
         n = len(board)
