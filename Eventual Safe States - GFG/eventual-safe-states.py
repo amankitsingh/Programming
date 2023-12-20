@@ -26,12 +26,13 @@ class Solution:
         for i in range(n):
             if visited[i] == 0:
                 dfs(i)
-            if pathVisited[i]==0:
-                result.append(i)
         
+        for i in range(n):
+            if pathVisited[i] == 0:
+                result.append(i)
+
 
         return sorted(result)
-
 
 
 #{ 
