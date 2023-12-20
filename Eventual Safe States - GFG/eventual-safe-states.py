@@ -1,7 +1,6 @@
-#User function Template for python3
-
-from typing import List
-
+### DFS approach
+### cane also be solved in reverse kahn's algo approach
+### Time complexity - O(V*E), Space complexity - O(2V+V)~O(V)
 class Solution:    
     def eventualSafeNodes(self, V : int, graph : List[List[int]]) -> List[int]:
         n = len(graph)
@@ -33,27 +32,3 @@ class Solution:
 
 
         return sorted(result)
-
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-if __name__=="__main__":
-    T = int(input())
-    for t in range(T):
-        
-        V, E = map(int, input().strip().split())
-        adj = [[] for i in range(V)]
-        for i in range(E):
-            u, v = map(int, input().strip().split())
-            adj[u].append(v)
-        obj = Solution()
-        ans = obj.eventualSafeNodes(V, adj)
-        for nodes in ans:
-            print(nodes, end = ' ')
-        print()
-            
-
-
-# } Driver Code Ends
