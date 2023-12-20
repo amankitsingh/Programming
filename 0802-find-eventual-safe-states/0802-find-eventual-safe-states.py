@@ -10,8 +10,9 @@ class Solution:
                 graphrev[v].append(node)
                 indegree[node]+=1
     
-
-        queue.extend(filter(lambda i: indegree[i]==0, range(V)))
+        for i in range(V):
+            if indegree[i] == 0:
+                queue.append(i)
     
         result = []
         while queue:
