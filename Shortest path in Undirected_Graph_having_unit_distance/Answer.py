@@ -1,5 +1,5 @@
 ### Answer 1 - BFS
-### Time complexity - O(E+N*E+N)~O(N*E), Space complexity - O(N+N+N+N+2M)~O(N+M)
+### Time complexity - O(E+N+2E+N)~O(N+2E), Space complexity - O(N+N+N+N+2M)~O(N+2M)
 from typing import List
 from collections import defaultdict,deque
 def shortestPath(n:int, edges: List[List[int]], src:int ) -> List[int]:
