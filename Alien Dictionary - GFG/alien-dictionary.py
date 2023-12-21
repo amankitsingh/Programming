@@ -1,6 +1,8 @@
 ### Answer 1 - Using Kahn's algorithm 
 ### Time complexity - O(N*M + K + K + Q) ~ O(N*M), Space complexity - O(K + N + N)~O(N)
 ### Here M is the length of the largest word in the array, Q is the queue
+### Intuition
+### to check all the consecutive pairs of the words and find the differentiating factor and map them as a graph, to get the problem down to topological sort.
 from collections import defaultdict,deque
 class Solution:
     def findOrder(self,alien_dict, N, K):
