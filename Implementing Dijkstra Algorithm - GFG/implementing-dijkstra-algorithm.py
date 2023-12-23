@@ -25,7 +25,7 @@ class Solution:
                     queue.append((node_to,distance[node_to]))
         return distance
         
-### Answer 2 - Implementation using heap to reduce the time complexity
+### Answer 2 - Implementation using min-heap (priority queue) to reduce the time complexity
 ### Time complexity - O(V*E), Space complexity - O(V)
 import heapq
 class Solution:
