@@ -1,4 +1,4 @@
-### Answer 1 - Implementation using deque
+### Answer 1 - Implementation using deque(set queue)
 ### Time complexity - O(E*log(V)+Q), Space complexity - O(V)
 from collections import deque
 class Solution:
