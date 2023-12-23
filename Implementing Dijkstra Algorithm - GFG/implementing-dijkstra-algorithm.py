@@ -1,5 +1,6 @@
 ### Answer 1 - Implementation using deque(set queue)
 ### Time complexity - O(E*log(V)+Q), Space complexity - O(V)
+### Advantage - if the node is visited then remove from queue and parse the shortest distance value only
 from collections import deque
 class Solution:
 
