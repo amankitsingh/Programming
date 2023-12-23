@@ -1,5 +1,5 @@
 ### Answer 1 - Implementation using deque
-### Time complexity - O(V*E+Q), Space complexity - O(V)
+### Time complexity - O(E*log(V)+Q), Space complexity - O(V)
 from collections import deque
 class Solution:
 
@@ -26,7 +26,7 @@ class Solution:
         return distance
         
 ### Answer 2 - Implementation using min-heap (priority queue) to reduce the time complexity
-### Time complexity - O(V*E), Space complexity - O(V)
+### Time complexity - O(E*log(V)), Space complexity - O(V)
 import heapq
 class Solution:
 
