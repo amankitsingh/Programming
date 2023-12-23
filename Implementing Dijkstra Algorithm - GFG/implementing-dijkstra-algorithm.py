@@ -1,4 +1,5 @@
 from collections import deque
+import heapq
 class Solution:
 
     #Function to find the shortest distance of all the vertices
@@ -6,21 +7,17 @@ class Solution:
     def dijkstra(self, V, adj, S):
         distance = [float("inf")]*V
         distance[S] = 0
-        queue = deque()
-        queue.append((S,0))
+        pq = [(S,0)]
         
-        while queue:
-            node,dist = queue.popleft()
-            for edges in adj[node]:
-                node_to = edges[0]
-                weight = edges[1]
-                if dist+weight < distance[node_to]:
-                    if distance[node_to]!= float("inf"):
-                        if (node_to, distance[node_to]) in queue:
-                            queue.remove((node_to, distance[node_to]))
-                        
-                    distance[node_to] = dist+weight
-                    queue.append((node_to,distance[node_to]))
+        while pq:
+            node,dist = heapq.heappop(pq)
+            if dist > distance[node]:
+                continue
+            for node_to,weight in adj[node]:
+                new_dist = dist + weight
+                if new_dist < distance[node_to]:
+                    distance[node_to] = new_dist
+                    heapq.heappush(pq,(node_to,new_dist))
         return distance
 
 #{ 
