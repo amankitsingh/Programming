@@ -1,5 +1,7 @@
-#User function Template for python3
-
+### Answer 1 - Using Dijkstra’s algo and priority queue
+### Time complexity - O(E*log(V), Space complexity - O(N*M+Q)~O(N*M)
+### Intuition - given source and destination then definitely we use Dijkstras or bellman ford, but we don't have a negative cycle so Dijkstras, priority queue to get the speed
+### else normal queue will also work
 from typing import List
 from collections import deque
 import heapq
@@ -25,23 +27,3 @@ class Solution:
                     heapq.heappush(queue,(steps+1, dx,dy))
         
         return -1
-
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-         
-if __name__=="__main__":
-    for _ in range(int(input())):
-        n,m=map(int,input().strip().split())
-        grid=[]
-        for i in range(n):
-            grid.append([int(i) for i in input().strip().split()])
-        source = [0] * 2
-        source[0], source[1] = map(int,input().strip().split())
-        destination = [0] * 2
-        destination[0], destination[1] = map(int,input().strip().split())
-        obj=Solution()
-        print(obj.shortestPath(grid, source, destination))
-# } Driver Code Ends
