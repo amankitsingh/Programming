@@ -1,3 +1,5 @@
+### Answer 1 - Using Dijkstra's algo with priority queue
+### Time complexity - O(E*log(V)), Space complexity - O((K+2)*N + Q) ~ O((K+2)*N)
 import heapq
 from collections import defaultdict,deque
 class Solution:
