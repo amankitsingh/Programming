@@ -1,5 +1,5 @@
 ### Answer 1 - Using Dijkstra’s algo and priority queue
-### Time complexity - O(E*log(V), Space complexity - O(N*M+Q)~O(N*M)
+### Time complexity - O(4*N*M), Space complexity - O(N*M+Q)~O(N*M)
 ### Intuition - given source and destination then definitely we use Dijkstras or bellman ford, but we don't have a negative cycle so Dijkstras, priority queue to get the speed
 ### else normal queue will also work
 from typing import List
@@ -26,4 +26,32 @@ class Solution:
                         return destdistance[dx][dy]
                     heapq.heappush(queue,(steps+1, dx,dy))
         
+        return -1
+
+### Answer 2 - Using Dijkstra’s algo and hashmap
+### Time complexity - O(4*N*M), Space complexity - O(N*M+Q)~O(N*M)
+### Intuition - given source and destination then definitely we use Dijkstras or Bellman Ford, but we don't have a negative cycle so Dijkstras, hashmap to get the speed
+### and save memory for the worst case.
+from collections import deque
+class Solution:
+    
+    def shortestPath(self, grid: List[List[int]], source: List[int], destination: List[int]) -> int:
+        queue = deque([(0, source[0], source[1])])
+        distanceMap = { (source[0], source[1]) : 0 }
+    
+        while queue:
+            distance, i, j = queue.popleft()
+
+            if i == destination[0] and j == destination[1]:
+                return distance    
+
+            for adjI, adjJ in [ (i + 1, j), (i - 1, j), (i, j - 1), (i, j + 1) ]:
+                if adjI < 0 or adjI >= len(grid) or adjJ < 0 or adjJ >= len(grid[0]) or grid[adjI][adjJ] == 0:
+                    continue
+    
+    
+                if 1 + distance < distanceMap.get((adjI, adjJ), float('inf')):
+                    distanceMap[(adjI, adjJ)] = 1 + distance
+                    queue.append((1 + distance, adjI, adjJ))
+    
         return -1
