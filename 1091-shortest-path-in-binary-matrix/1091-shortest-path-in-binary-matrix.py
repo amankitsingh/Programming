@@ -1,3 +1,5 @@
+### up,down,left,right = [0,1,0,-1,0]
+### diagonal up,left,down,right = [-1,-1,1,1,-1]
 from collections import deque
 class Solution:
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
