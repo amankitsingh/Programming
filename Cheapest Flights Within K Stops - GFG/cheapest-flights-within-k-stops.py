@@ -10,7 +10,7 @@ class Solution:
             adj[node_from].append((node_to,weight))
             
         distance = [[float("inf")]*(k+2) for _ in range(n)]
-
+    
         queue = [[0,k+1,src]]
         
         while queue:
@@ -25,7 +25,6 @@ class Solution:
                         heapq.heappush(queue, (new_dist, stepsLeft-1,node_to))                
                 
         return -1
-
 
 
 
