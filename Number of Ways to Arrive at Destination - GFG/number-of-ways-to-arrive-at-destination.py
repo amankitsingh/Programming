@@ -1,9 +1,8 @@
-#User function Template for python3
-
+### Answer 1 - Usign dijkstra's and min heap(priority queue)
+### Time complexity - O(V*Elog(V)), Space complexity - O(adj + 2*V + Q)~O(adj)
 from typing import List
 from collections import defaultdict
 import heapq
-import sys
 class Solution:
     def countPaths(self, n: int, roads: List[List[int]]) -> int:
         adj = defaultdict(list)
@@ -33,49 +32,3 @@ class Solution:
                 elif new_time == timetaken[node]:
                     ways[node]=(ways[node]+ways[source])%mod
         return ways[n-1]%mod
-
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-class IntArray:
-    def __init__(self) -> None:
-        pass
-    def Input(self,n):
-        arr=[int(i) for i in input().strip().split()]#array input
-        return arr
-    def Print(self,arr):
-        for i in arr:
-            print(i,end=" ")
-        print()
-
-
-if __name__=="__main__":
-    t = int(input())
-    for _ in range(t):
-        
-        n,m=map(int,input().split())
-        
-        
-        adj=[]
-        
-        for i in range(m):
-            tmp =[]
-            x,y,z=map(int,input().split())
-            tmp.append(x)
-            tmp.append(y)
-            tmp.append(z)
-            adj.append(tmp)
-            
-        
-        
-        
-       
-        obj = Solution()
-        res = obj.countPaths(n, adj)
-        
-        print(res)
-        
-
-# } Driver Code Ends
