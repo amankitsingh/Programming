@@ -1,5 +1,5 @@
 ### Answer 1 - Usign dijkstra's and min heap(priority queue)
-### Time complexity - O(V*Elog(V)), Space complexity - O(adj + 2*V + Q)~O(adj)
+### Time complexity - O(E*log(V)), Space complexity - O(adj + 2*V + Q)~O(adj)
 import heapq
 from collections import defaultdict
 class Solution:
