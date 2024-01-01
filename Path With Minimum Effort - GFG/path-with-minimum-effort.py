@@ -1,4 +1,5 @@
-#User function Template for python3
+### Answer 1 - Dijkstra's algorithm using minheap (priority queue)
+### Time complexity - O(4*N*M*log(N*M)), Space complexity - O(N*M + Q) ~O(N*M)
 import heapq
 from collections import defaultdict
 class Solution:
@@ -23,22 +24,3 @@ class Solution:
                         heapq.heappush(pqueue,(diff, dx, dy))
         
         return distance[n-1][m-1]
-
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
-
-if __name__ == '__main__':
-    tc = int(input())
-    while tc > 0:
-        n,m=map(int,input().split())
-        a=[]
-        for i in range(n):
-            li=list(map(int,input().split()))
-            a.append(li)
-        ob = Solution()
-        ans = ob.MinimumEffort(a)
-        print(ans)
-        tc -= 1
-# } Driver Code Ends
