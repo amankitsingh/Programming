@@ -1,3 +1,5 @@
+### Answer 1 - Dijkstra's algorithm using minheap (priority queue)
+### Time complexity - O(4*N*M*log(N*M)), Space complexity - O(N*M + Q) ~O(N*M)
 from collections import defaultdict
 import heapq
 class Solution:
