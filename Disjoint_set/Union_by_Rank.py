@@ -1,5 +1,6 @@
 ### Disjoint set data structure
 ### union by rank and findparent with parent compression
+### TC -  O(4)
 class DisjoinSet:
 	def __init__(self, n):
 		self.rank = [0]*n
