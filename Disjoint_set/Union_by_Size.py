@@ -2,8 +2,8 @@
 ### union by size and findparent with parent compression
 class DisjoinSet:
 	def __init__(self, n):
-		self.rank = [0]*n
-		self.parent = [i for i in range(n)]
+		self.rank = [0]*(n+1)
+		self.parent = [i for i in range(n+1)]
 
 	def findparent(self, node):
 		if node == self.parent[node]:
