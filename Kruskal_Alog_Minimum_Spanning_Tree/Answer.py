@@ -1,6 +1,6 @@
 ### Disjoint datastructure to get the minimum spannig tree of the tree
 ### for large cases unionbysize is good, unionbyrank will fail 
-### Time complexity - O(4 + nlogn + n)~O(nlogn), Space complexity - O(V+V)~O(V)
+### Time complexity - O(V+E + nlogn + n)~O(nlogn), Space complexity - O(V+V+E)~O(V)
 class DSU:
     def __init__(self, n):
         self.size = [0]*(n)
