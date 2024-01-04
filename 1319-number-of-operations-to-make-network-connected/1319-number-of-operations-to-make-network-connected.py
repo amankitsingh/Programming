@@ -1,3 +1,5 @@
+### Answer 1 - Using Disjoint Set of union of size
+### Time complexity - O(E*4*aplha + N)~O(E), Space complexity - O(N+N)~O(N)
 class DisjointSet:
     def __init__(self, size):
         self.size =[0]*(size)
