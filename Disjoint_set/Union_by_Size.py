@@ -13,8 +13,8 @@ class DisjointSet:
 		return self.parent[node]
 	
 	def unionbysize(self, u, v):
-		upu,upv = self.parent[u], self.parent[v]
-		if upu == upv:
+		ulu,ulv = self.parent[u], self.parent[v]
+		if ulu == ulv:
 			return
 		if self.size[ulu] < self.size[ulv]:
 			self.parent[ulu] = ulv
