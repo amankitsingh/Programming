@@ -1,3 +1,5 @@
+### Answer 1 - Using Disjointset
+### Time complexity - O(N*(E*4*aplha + E) + N + E) ~ O(N*MlogN), Space complexity - O(N+N)~O(N)
 class DisjointSet:
     def __init__(self, size):
         self.parents = list(range(size))
