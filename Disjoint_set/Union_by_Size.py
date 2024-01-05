@@ -9,7 +9,7 @@ class DisjointSet:
 	def findparent(self, node):
 		if node == self.parent[node]:
 			return node
-		self.parent[node] = self.findparent[node]
+		self.parent[node] = self.findparent(node)
 		return self.parent[node]
 	
 	def unionbysize(self, u, v):
