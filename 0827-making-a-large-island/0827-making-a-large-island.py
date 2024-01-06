@@ -75,4 +75,63 @@ class Solution:
             find_largest_group(i,j)
 
         return result
+
+### Answer 2 - Using DFS Search
+### Time complexity - O(N*N + N*N)~O(N), Space complexity - O(S)
+### Its a good method, but faster than disjoint set
+class Solution:
+    def largestIsland(self, grid: List[List[int]]) -> int:
+        
+        ROWS, COLS = len(grid), len(grid[0])
+        directions = [(1,0),(0,1),(-1, 0),(0,-1)]
+
+
+        def dfs(r, c, i):
+            count = 1
+            grid[r][c] = i
+
+            for dr, dc in directions:
+                nr = dr+r
+                nc = dc+c
+                if nr < 0 or nr >= ROWS or nc < 0 or nc >= COLS:
+                    continue
+                if grid[nr][nc] == 1:
+                    count += dfs(nr, nc, i)
+
+            return count
+
+
+        max_size = 0
+        sizes = {}
+        i = 2
+        for r in range(ROWS):
+            for c in range(COLS):
+                if grid[r][c] == 1:
+                    sizes[i] = dfs(r, c, i)
+                    max_size = max(max_size, sizes[i])
+                    i+=1
+        
+        if not sizes:
+            return 1
+
+        # now expand 
+        for r in range(ROWS):
+            for c in range(COLS):
+                if grid[r][c] != 0:
+                    continue
+
+                cur_size = 1
+                touches = set()
+                for dr, dc in directions:
+                    nr = dr+r
+                    nc = dc+c
+                    if nr < 0 or nr >= ROWS or nc < 0 or nc >= COLS or grid[nr][nc]==0:
+                        continue
+                    touches.add(grid[nr][nc])
+
+                for island in touches:
+                    cur_size+=sizes[island]
+                max_size = max(max_size, cur_size)
+
+        return max_size
         
