@@ -1,3 +1,5 @@
+### Answer 1 - Using Disjoint Set
+### Time complexity - O(N+E*4*aplha)~O(N), Space complexity - O(N*2 + N + N)~O(N)
 class DisjointSet:
     def __init__(self, size):
         self.size = [1]*size
@@ -18,6 +20,16 @@ class DisjointSet:
         else:
             self.parent[ulp_v]= ulp_u
             self.size[ulp_u]+=self.size[ulp_v]
+        return 1
+    # Another way of writing    
+    def union(self, u, v):
+        ulp_u,ulp_v = self.findparent(u), self.findparent(v)
+        if ulp_v == ulp_u:
+            return 0
+        if self.size[ulp_u] < self.size[ulp_v]:
+            ulp_u, ulp_v = ulp_v, ulp_u
+        self.parent[ulp_v] = self.parent[ulp_u]
+        self.size[ulp_u]+=self.size[ulp_v]
         return 1
     
             
