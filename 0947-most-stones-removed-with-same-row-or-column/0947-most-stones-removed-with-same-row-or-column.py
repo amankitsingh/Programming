@@ -14,8 +14,8 @@ class DisjointSet:
             return 0
         if self.size[ulp_u] < self.size[ulp_v]:
             ulp_u, ulp_v = ulp_v, ulp_u
-        self.size[ulp_u]+=self.size[ulp_v]
         self.parent[ulp_v] = self.parent[ulp_u]
+        self.size[ulp_u]+=self.size[ulp_v]
         return 1
     
             
