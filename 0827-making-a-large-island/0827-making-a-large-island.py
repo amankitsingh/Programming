@@ -1,3 +1,6 @@
+### Answer 1 - Using DisJoint Set 
+### Time complexity - O(N*N + N*N)~O(N), Space complexity - O(2*N*N)~O(N*N)
+### Its a good method, but slightly slower than normal DFS search
 class DisjointSet:
     def __init__(self, size):
         self.size = [1]*size
