@@ -1,5 +1,5 @@
 ### Answer 1 - Using Tarjan's algorithm
-### Time complexity - O(V+E), Space complexity - O(V*4+Q)~O(V)
+### Time complexity - O(V+2E), Space complexity - O(V*4+Q)~O(V)
 import sys
 sys.setrecursionlimit(10**6)
 from collections import defaultdict
