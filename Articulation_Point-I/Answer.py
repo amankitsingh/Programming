@@ -33,7 +33,5 @@ class Solution:
         self.low = [None]*n
         self.artpoint = []
         self.dfs(0,-1, adj)
-        for i in range(n):
-            if self.mark[i] == 1:
-                self.artpoint.append(i)
+        self.artpoint = [i for i in range(n) if self.mark[i]]
         return [-1] if len(self.artpoint) == 0 else self.artpoint
