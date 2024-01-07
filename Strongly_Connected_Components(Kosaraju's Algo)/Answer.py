@@ -1,5 +1,9 @@
 ### Answer 1 - Kosaraju algo to find the strongly connected components
 ### Time complexity - o(3*V*E)~O(V*E), Space complexity - O(V+S+V*E)~O(V*E)
+### Intuition - if we reverse the edges then the connected component remains same, because u->v or v->u will stay connect
+### First make the stack concerning start and finish time, meaning FIFO
+### then reverse the edges 
+### then iterate the stack and loop through the nodes and repeat the process till stack is empty
 from collections import defaultdict
 class Solution:
     
