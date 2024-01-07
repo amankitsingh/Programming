@@ -1,3 +1,5 @@
+### Answer 1 - Using Tarjan's algo
+### Time complexity - O(V+2E), Space complexity - O(V+2E + 3V))~O(V+2E)
 from collections import defaultdict
 class Solution:
     def dfs(self, node, parent):
