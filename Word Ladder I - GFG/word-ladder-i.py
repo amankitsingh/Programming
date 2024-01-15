@@ -21,21 +21,3 @@ class Solution:
                         wordList.remove(new_word)
                         queue.append([new_word,step+1])
         return 0
-
-#{ 
- # Driver Code Starts
-# from collections import deque 
-if __name__ == '__main__':
-	T=int(input())
-	for tt in range(T):
-		n = int(input())
-		wordList = []
-		for i in range(n):
-			wordList.append(input().strip())
-		startWord = input().strip()
-		targetWord = input().strip()
-		obj = Solution()
-		ans = obj.wordLadderLength(startWord, targetWord, wordList)
-		print(ans)
-
-# } Driver Code Ends
