@@ -1,3 +1,5 @@
+### Answer 1
+### Time complexity - O(N+2E) + Q, Space complexity - O(N + N) ~ O(N)
 class Solution:
     def dijkstra(self, source):
         pq = [(0, source)]
