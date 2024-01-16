@@ -1,19 +1,27 @@
-from collections import defaultdict
 class Solution:
-    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
-        max_time = 6001
-        time = [max_time]*(n+1)
-        time[k] = 0
-        time[0] = 0
+    def dijkstra(self, source):
+        pq = [(0, source)]
         
-        for i in range(n-1):
-            for node_from, node_to, wt_time in times:
-                new_time = wt_time + time[node_from]
-                if time[node_from]!= max_time and new_time < time[node_to]:
-                    time[node_to] = new_time
-        
-        for i in time:
-            if i == 6001:
-                return -1
-        return max(time)
+        while pq:
+            wt_time, node = heapq.heappop(pq)
             
+            for time, node_to in self.adj[node]:
+                new_time = wt_time + time
+                if self.signalReceivedAt[node_to] > new_time:
+                    self.signalReceivedAt[node_to] = new_time
+                    heapq.heappush(pq, (self.signalReceivedAt[node_to], node_to))
+                    
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
+        self.adj = defaultdict(list)
+        
+        for node_from, node_to, traveltime in times:
+            self.adj[node_from].append([traveltime, node_to])
+        
+        self.signalReceivedAt = [float('inf')] * (n + 1)
+        self.signalReceivedAt[k] = 0
+        
+        self.dijkstra(k)
+        
+        answer = max(self.signalReceivedAt[1:])
+        
+        return -1 if answer == float('inf') else answer
