@@ -1,5 +1,5 @@
 ### Answer 1 - usign DFS
-### Time complexity - O(N*2E) + O(N), Space complexity - O(N)+O(N)
+### Time complexity - O(N+2E) + O(N), Space complexity - O(N)+O(N)
 def cycleDetection(edges, n, m):
     adj = [[] for _ in range(n+1)]
     if m == 0:
@@ -27,7 +27,7 @@ def cycleDetection(edges, n, m):
         return "No"
 
 ### Answer  - usign BFS
-### Time complexity - O(N*2E) + O(N), Space complexity - O(N)+O(N)
+### Time complexity - O(N+2E) + O(N), Space complexity - O(N)+O(N)
 from collections import deque
 def cycleDetection(edges, n, m):
     adj = [[] for _ in range(n+1)]
