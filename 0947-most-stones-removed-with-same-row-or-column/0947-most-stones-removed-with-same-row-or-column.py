@@ -96,3 +96,35 @@ class Solution:
         
         return removed
                 
+### Answer 3 - Using Disjoint Set
+### Time complexity - O(N+N*E*4*aplha)~O(N), Space complexity - O(N*2 + N)~O(N)
+class DisjointSet:
+    def __init__(self, size):
+        self.size = [1]*size
+        self.parent = list(range(size))
+    
+    def findparent(self, node):
+        if node != self.parent[node]:
+            self.parent[node] = self.findparent(self.parent[node])
+        return self.parent[node]
+    
+    def union(self, u, v):
+        ulp_u,ulp_v = self.findparent(u), self.findparent(v)
+        if ulp_v == ulp_u:
+            return
+        if self.size[ulp_u] < self.size[ulp_v]:
+            ulp_u, ulp_v = ulp_v, ulp_u
+        self.parent[ulp_v] = self.parent[ulp_u]
+        self.size[ulp_u]+=self.size[ulp_v]
+        
+class Solution:
+    def maxRemove(self, stones, n):
+        dsu = DisjointSet(20005)
+        for i,j in stones:
+            nodeRow, nodeCol = i,j+10001
+            dsu.union(nodeRow, nodeCol)
+
+        parentstones = set()
+        for i,j in stones:
+            set.add(dsu.findparent(i))
+        return n-len(parentstones)
