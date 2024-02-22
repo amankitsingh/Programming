@@ -98,6 +98,7 @@ class Solution:
                 
 ### Answer 3 - Using Disjoint Set
 ### Time complexity - O(N+N*E*4*aplha)~O(N), Space complexity - O(N*2 + N)~O(N)
+### logical is to take row number as it is but use column number greater than the size of the max limit and start appending it to the parent in same row
 class DisjointSet:
     def __init__(self, size):
         self.size = [1]*size
@@ -121,7 +122,7 @@ class Solution:
     def maxRemove(self, stones, n):
         dsu = DisjointSet(20005)
         for i,j in stones:
-            nodeRow, nodeCol = i,j+10001
+            nodeRow, nodeCol = i,j+10001 # main logic
             dsu.union(nodeRow, nodeCol)
 
         parentstones = set()
