@@ -1,14 +1,16 @@
 class Solution:
     def minimumTotal(self, triangle: List[List[int]]) -> int:
         N = len(triangle)
-        dp = [[-1 for _ in range(N)] for _ in range(N)]
-        def unpath(i,j):
-            if i==N-1:
-                return triangle[i][j]
-            if dp[i][j]!=-1:
-                return dp[i][j]
-            down = triangle[i][j] + unpath(i+1,j)
-            diagonal = triangle[i][j] + unpath(i+1,j+1)
-            dp[i][j] =  min(down,diagonal)
-            return dp[i][j]
-        return unpath(0,0)
+        front = [0]*N
+        curr = [0]*N
+        for i in range(N):
+            front[i] = triangle[N-1][i]
+        
+        for i in range(N-2,-1,-1):
+            for j in range(i,-1,-1):
+                down = triangle[i][j] + front[j]
+                diagonal = triangle[i][j] + front[j+1]
+                curr[j] =  min(down,diagonal)
+            front = curr[::]
+        
+        return front[0]
