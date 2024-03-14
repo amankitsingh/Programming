@@ -1,3 +1,5 @@
+### sliding window technique
+### Time complexity - O(N), Space complexity - O(3)~O(1)
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         left,right,total,res=0,0,0,inf
