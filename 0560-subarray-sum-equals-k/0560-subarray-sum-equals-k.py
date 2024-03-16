@@ -1,3 +1,6 @@
+### Answer - Concept of prefix sum
+### If we take the sum of the subarray and subtract the k from it, we are left(x-k) with k
+### Time complexity - O(N), Space complexity - O(N)
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         result_map = defaultdict(int)
