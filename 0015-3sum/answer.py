@@ -5,14 +5,13 @@ class Solution:
         result = set()
         n = len(nums)
         for i in range(n):
-            hashset =set()
             for j in range(i+1,n):
-                third = -(nums[i]+nums[j])
-                if third in hashset:
-                    temp = [nums[i],nums[j],third]
-                    temp.sort()
-                    result.add(tuple(temp))
-                hashset.add(nums[j])
+                for k in range(j+1,n):
+                    total_sum = nums[i]+nums[j]+nums[k]
+                    if total_sum == 0:
+                        temp = [nums[i],nums[j],third]
+                        temp.sort()
+                        result.add(tuple(temp))
         return list(result)
 
 ### Answer 2 - Better approach
