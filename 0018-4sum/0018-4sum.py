@@ -1,3 +1,5 @@
+### Answer 1 - Using 3 sum optimal approach
+### TC - O(N^3), SC - O(1)
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         n = len(nums)
