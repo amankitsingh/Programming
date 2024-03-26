@@ -27,7 +27,14 @@ class Solution:
 
 ### Answer 3 - Optimal solution
 ### TC - O(n), SC-O(1)
-### intuition - if 0 then the product becomes 0, if odd -ve number then ans is -ve, if even -ve then ans is +ve
+'''
+intuition - 
+if +ve number only, then product is +ve
+if 0 then the product becomes 0,
+    then we can either have prefix sum or suffix sum
+if odd -ve number then product is -ve, 
+if even -ve then product is +ve
+'''
 class Solution:
     def maxProduct(self, arr: List[int]) -> int:
         n = len(arr)
