@@ -7,14 +7,12 @@ class Solution:
             left = low  # starting index of left half of arr
             right = mid + 1 # starting index of right half of arr
 
-            cnt = 0  
             while (left <= mid and right <= high):
                 if (arr[left] <= arr[right]):
                     temp.append(arr[left])
                     left += 1
                 else:
                     temp.append(arr[right])
-                    cnt += (mid - left + 1)
                     right += 1
 
             while (left <= mid):
@@ -28,7 +26,6 @@ class Solution:
             for i in range(low, high + 1):
                 arr[i] = temp[i - low]
 
-            return cnt
         def countPairs(arr, low, mid, high):
             right = mid + 1
             cnt = 0
