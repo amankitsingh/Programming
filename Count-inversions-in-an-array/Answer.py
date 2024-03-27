@@ -18,6 +18,7 @@ A1 - [1,2,3]
 A2 - [2,3,4,5]
 if A1<A2:
     take count
+sort and count
 '''
 def merge(arr : List[int], low : int, mid : int, high : int) -> int:
     temp = []   
