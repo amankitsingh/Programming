@@ -14,6 +14,10 @@ def numberOfInversions(a : List[int], n : int) -> int:
 '''
 Intuition
 If the array is sorted then its easier to find the number of element greater
+A1 - [1,2,3]
+A2 - [2,3,4,5]
+if A1<A2:
+    take count
 '''
 def merge(arr : List[int], low : int, mid : int, high : int) -> int:
     temp = []   
