@@ -1,3 +1,5 @@
+### Answer 1 - using array
+### TC - O(1), SC - O(N)
 class BrowserHistory:
 
     def __init__(self, homepage: str):
