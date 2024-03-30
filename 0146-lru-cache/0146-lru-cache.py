@@ -1,3 +1,10 @@
+### Answer 1 - Using Dict
+'''
+TC 
+put - 0(1)
+get - O(1)
+SC - O(N)
+'''
 class LRUCache:
 
     def __init__(self, capacity: int):
@@ -21,9 +28,3 @@ class LRUCache:
             else:
                 self.size+=1
         self.queue[key]=value
-
-
-# Your LRUCache object will be instantiated and called as such:
-# obj = LRUCache(capacity)
-# param_1 = obj.get(key)
-# obj.put(key,value)
