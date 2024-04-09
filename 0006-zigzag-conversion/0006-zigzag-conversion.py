@@ -1,3 +1,6 @@
+### Answer 1
+### TC - O(N), SC(N*R)
+### N-len of string, R-no of rows.
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
         n = len(s)
