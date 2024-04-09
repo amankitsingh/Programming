@@ -9,7 +9,7 @@ class Solution:
                 for k in range(j+1,n):
                     total_sum = nums[i]+nums[j]+nums[k]
                     if total_sum == 0:
-                        temp = [nums[i],nums[j],third]
+                        temp = [nums[i],nums[j],nums[k]]
                         temp.sort()
                         result.add(tuple(temp))
         return list(result)
