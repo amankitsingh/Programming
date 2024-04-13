@@ -1,5 +1,6 @@
 ### Answer 1 - using array
 ### TC- O(nlogn+n), SC - O(N)
+### array is not sorted
 '''
 Intution 
 sort the array
