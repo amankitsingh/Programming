@@ -19,6 +19,6 @@ class Solution:
             if not result or result[-1][1] < interval[0]:
                 result.append(interval)
             else:
-                # if last element in the result is greateer or equal then the current the expand the range    
+                # if last element in the result is greater or equal then the current the expand the range    
                 result[-1][1] = max(interval[1], result[-1][1])
         return result
