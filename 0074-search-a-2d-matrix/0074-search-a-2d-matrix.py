@@ -1,3 +1,5 @@
+### Answer 1 - Using binary search
+### TC - O(N*logM), SC - O(1)
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         n = len(matrix)
