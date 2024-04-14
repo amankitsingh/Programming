@@ -28,7 +28,7 @@ class Solution:
                     lo = mid+1
         return False
         
-# Answer 3 - Time complexity O(m+n)
+# Answer 3 - Time complexity O(n*m)~O(n^2)
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         for i in range(len(matrix)):
