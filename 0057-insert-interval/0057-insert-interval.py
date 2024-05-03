@@ -20,7 +20,7 @@ class Solution:
 
 
 ### Answer 2 - after observation
-### TC - O(N), SC - O(1)
+### TC - O(N), SC - O(N)
 '''
 Intution
 we observed that there are 3 case
