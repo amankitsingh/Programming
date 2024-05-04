@@ -15,7 +15,7 @@ class Solution:
                 mini = min(minicut(i,k)+minicut(k,j)+(cuts[j]-cuts[i]),mini)
             dp[i][j] = mini
             return dp[i][j]
-        return minicut(0,m-1)
+        return minicut(0,len(cuts)-1)
 
 ### Answer 2
 ### Time complexity - O(M*M*M), Space complexity - O(M*M)
