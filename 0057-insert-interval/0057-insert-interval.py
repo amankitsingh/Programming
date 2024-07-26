@@ -1,4 +1,4 @@
-### Answer - similar to https://github.com/amankitsingh/Programming/tree/master/0056-merge-intervals - in this the array was not sorted 
+### Answer - similar to https://github.com/captain-indo/Programming/tree/master/0056-merge-intervals - in this the array was not sorted 
 ### TC - O(NlogN+N), SC - O(N)
 '''
 Intution:
